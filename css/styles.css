@@ -56,47 +56,70 @@ img {
     padding: 0;
     margin: 0;
 }
-
-.active-link{
-    color: var(--ocean);
+.hover-underline-animation {
+    display: inline-block;
     position: relative;
 }
-.active-link::after {
+
+.hover-underline-animation::after {
     display: block;
     content: '';
     width: 100%;
     height: 4px;
-    bottom: -28px;
+    bottom: -1px;
+    border-radius: 10px;
+    position: absolute;
+    transform: scaleX(0);
+    background-color: var(--ocean);
+    transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.active-link{
+    color: var(--ocean);
+    position: relative;
+}
+/* .active-link::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    bottom: -1px;
     background-color: var(--ocean);
     border-radius: 10px;
     position: absolute;
-}
+} */
 .menu-link{
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0.32px;
-}
-.link:hover, .link:focus {
-    color: var(--iris);
+    display: block;
+    padding: 25px 0;
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+}
+.link:hover, .link:focus {
+    color: var(--iris);
 }
 .link:active {
     color: var(--ocean);
 }
 .contact-links {
     text-decoration: none;
-    font-weight: 400;
+    /* font-weight: 400; */
     color: var(--slate);
-}
-.contact-links:focus, .contact-links:hover {
-    color: var(--iris);
+    display: block;
+    padding: 25px 0;
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-links:focus, .contact-links:hover {
+    color: var(--iris);
 }
 .contact-links .link:active {
     color: var(--ocean);
@@ -129,7 +152,7 @@ img {
  
 }
 .header{
-    padding: 25px 0;
+    /* padding: 25px 0; */
     border-bottom: 1px solid var(--cornflower);
 }
 .header-container{
@@ -192,12 +215,12 @@ img {
     color: var(--white);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     cursor: pointer;
-}
-.button:hover{
-    background-color: var(--ocean);
     transition-property: background-color, color, box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button:hover{
+    background-color: var(--ocean);
 }
 
 /*Modal*/
@@ -208,6 +231,9 @@ img {
     width: 100%;
     height: 100%;
     background-color: var(--modal-bg);
+    transition-property: opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
     opacity: 0;
@@ -240,13 +266,27 @@ img {
     background-color: var(--cornflower);
     border-color: rgba(0, 0, 0, 0.10);
     cursor: pointer;
+    transition-property: background-color, border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+    fill: var(--white);
+}
+.modal-close-circle:hover,
+.modal-close-circle:focus{
+    cursor: pointer;
+    background-color: var(--ocean);
 }
 .modal-close-icon {  
     width: 8px;
     height: 8px;
     fill: var(--navyblue);
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .section {
     padding: 120px 0;
 }
@@ -343,7 +383,10 @@ img {
     width: 40px;
     height: 40px;
     background-color: var(--iris);
-    border-radius: 50%;       
+    border-radius: 50%;   
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-link_box {
     width: 16px;
@@ -353,9 +396,6 @@ img {
 .team-social-link:hover, .team-social-link:focus {
     background-color: var(--ocean);
     cursor: pointer;
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-filter{
     display: flex;
@@ -370,6 +410,9 @@ img {
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0.64px;
+    transition-property: border, background-color, color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-filter:hover, .button-filter:focus {
     background-color: var(--ocean);
@@ -377,9 +420,6 @@ img {
     color: var(--white);
     border: 1px solid var(--ocean);
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
-    transition-property: background-color, color, box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-filter-active {
     background: var(--ocean);
@@ -411,9 +451,7 @@ img {
 }
 .portfolio_item:hover, .portfolio_item:focus {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-    transition-property: background-color, color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .portfolio-card {
     min-width: 360px;
@@ -430,6 +468,9 @@ img {
     background-color: var(--iris-opa);
     color: var(--cloud);
     font-weight: 400;
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link{
     text-decoration: none;
@@ -438,9 +479,6 @@ img {
 .portfolio-link:hover .portfolio-card-desc, .portfolio-link:focus .portfolio-card-desc {
     display: block;
     transform: translateY(-100%);
-    /* transition-property: color; */
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-text_wrapper {
     padding: 32px 16px;
@@ -478,6 +516,9 @@ img {
     border-radius: 4px;
     border: 1px solid var(--lightslate);
     color: var(--lightslate);
+    transition-property: background-color, color, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-box_svg{
     width: 104px;
@@ -488,9 +529,6 @@ img {
     border-color: var(--ocean);
     color: var(--ocean);
     cursor: pointer;
-    transition-property: background-color, color, box-shadow;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer {
     background-color: var(--navyblue);

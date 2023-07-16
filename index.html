@@ -17,15 +17,15 @@
                 <nav>
                     <a href="./index.html" class="logo-web link">WEB<span class="logo-studio">STUDIO</span></a>
                     <ul class="menu list">
-                        <li><a class="menu-link link active-link" href="./index.html">Studio</a></li>
-                        <li><a class="menu-link link" href="./portfolio.html">Portfolio</a></li>
-                        <li><a class="menu-link link" href="#">Contacts</a></li>
+                        <li><a class="menu-link hover-underline-animation link active-link" href="./index.html">Studio</a></li>
+                        <li><a class="menu-link hover-underline-animation link" href="./portfolio.html">Portfolio</a></li>
+                        <li><a class="menu-link hover-underline-animation link" href="#">Contacts</a></li>
                     </ul>
                 </nav>
             
                 <ul class="container-contacts list">
-                    <li><a class="contact-links" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-                    <li><a class="contact-links" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
+                    <li><a class="contact-links hover-underline-animation" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+                    <li><a class="contact-links hover-underline-animation" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
                 </ul>
             </div>
         </header>
@@ -35,17 +35,6 @@
                 <div class="container hero-container">
                     <h1 class="hero-title">Effective Solutions <br/>for Your Business</h1>
                     <button type="button" class="main-button button"  data-modal-open>Order Service</button>
-                </div>
-
-                <!-- Modal once you click Order Service button -->
-                <div class="modal-bg is-hidden" data-modal>
-                    <div class="modal">
-                        <button class="modal-close-circle" data-modal-close>
-                            <svg class="modal-close-icon">
-                                <use href="./images/icons.svg#modal-close"></use>
-                            </svg>
-                        </button>
-                    </div>
                 </div>
             </section>
 
@@ -376,7 +365,16 @@
             </div>
         
         </footer>
-
+        <!-- Modal once you click Order Service button -->
+        <div class="modal-bg is-hidden" data-modal>
+            <div class="modal">
+                <button class="modal-close-circle" data-modal-close>
+                    <svg class="modal-close-icon">
+                        <use href="./images/icons.svg#modal-close"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
         <script src="./js/modal.js"></script>
     </body>
 </html>
