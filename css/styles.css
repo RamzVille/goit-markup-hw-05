@@ -80,8 +80,9 @@ img {
 .active-link{
     color: var(--ocean);
     position: relative;
+    
 }
-/* .active-link::after {
+.active-link::after {
     display: block;
     content: '';
     width: 100%;
@@ -90,7 +91,7 @@ img {
     background-color: var(--ocean);
     border-radius: 10px;
     position: absolute;
-} */
+}
 .menu-link{
     font-size: 16px;
     font-weight: 500;
@@ -262,27 +263,25 @@ img {
     right:24px;
     width: 24px;
     height: 24px;
+    color: var(--navyblue);
     border-radius: 50%;
     background-color: var(--cornflower);
     border-color: rgba(0, 0, 0, 0.10);
     cursor: pointer;
-    transition-property: background-color, border-color;
+    transition-property: background-color, border-color, color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal-close-icon:hover,
-.modal-close-icon:focus {
-    fill: var(--white);
 }
 .modal-close-circle:hover,
 .modal-close-circle:focus{
     cursor: pointer;
+    color: var(--white);
     background-color: var(--ocean);
 }
 .modal-close-icon {  
     width: 8px;
     height: 8px;
-    fill: var(--navyblue);
+    fill: currentColor;
     transition-property: fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -301,7 +300,6 @@ img {
 .benefits-svg {
     width: 64px;
     height: 64px;
-   
     flex-shrink: 0;
 }
 .benefits-svg-box{
